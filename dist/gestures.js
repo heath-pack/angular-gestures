@@ -22,7 +22,7 @@
   }
   // Node.js
   else if (typeof exports === 'object') {
-    module.exports = factory({}, require('angular'), require('hammerjs'));
+    module.exports = factory({}, require('angular'), require('hammerjs').Hammer);
   }
   // Angular
   else if (angular) {
