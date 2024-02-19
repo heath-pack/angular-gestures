@@ -22,7 +22,7 @@
   }
   // Node.js
   else if (typeof exports === 'object') {
-    module.exports = factory({}, require('angular'), require('Hammer'));
+    module.exports = factory({}, require('angular'), require('hammerjs'));
   }
   // Angular
   else if (angular) {
@@ -152,9 +152,9 @@
                 cb.call(scope, event);
               }
             };
-
-            if (scope.$root.$$phase === '$apply' ||
-              scope.$root.$$phase === '$digest') {
+            
+            if (scope && scope.$root && (scope.$root.$$phase === '$apply' ||
+              scope.$root.$$phase === '$digest')) {
               callbackHandler();
             } else {
               scope.$apply(callbackHandler);
