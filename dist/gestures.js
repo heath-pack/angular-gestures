@@ -16,13 +16,13 @@
 (function (root, factory) {
   // AMD
   if (typeof define === 'function' && define.amd) {
-    define(['angular', 'Hammer'], function (angular, Hammer) {
+    define(['angular', 'hammerjs'], function (angular, Hammer) {
       return factory({}, angular, Hammer);
     });
   }
   // Node.js
   else if (typeof exports === 'object') {
-    module.exports = factory({}, require('angular'), require('hammerjs').Hammer);
+    module.exports = factory({}, require('angular'), require('hammerjs'));
   }
   // Angular
   else if (angular) {
